@@ -7,21 +7,17 @@ const fen3 = "2rqk2r/1p3pp1/p2bbn1p/3p4/3Q1N2/P1N1P1P1/1P3P1P/R3KB1R w KQk - 1 1
 const modifiedFen = fen => {
 
   const regex1 = /[1rnbqk]/i;
+  const regex2 = /[2-8]/;
+  const x = 'x';
 
   const structure = fen.split(" ").slice(0, 1).join('').split('');
 
   const li = structure.map(item => {
     
     return item
-      .replace(regex1, 'x')
-      .replace('2', 'xx')
-      .replace('3', 'xxx')
-      .replace('4', 'xxxx')
-      .replace('5', 'xxxxx')
-      .replace('6', 'xxxxxx')
-      .replace('7', 'xxxxxxx')
-      .replace('8', 'xxxxxxxx')
-  
+      .replace(regex1, x)
+      .replace(regex2, x.repeat(item));
+
   });
 
   const resp = li.join('');
