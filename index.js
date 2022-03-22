@@ -91,20 +91,28 @@ function convertPGNToFENxList(PGN) {
  * @param {Array<string>} pgnList
  * @returns {Array<string>} a list of PGNs that match the pawn structure of the FEN position
  */
-function findGamesByPawnStructure(fenPosition, pgnList) {
+function findGamesByPawnStructure(fenPosition, games, gameType = 'string_moves') {
 	// convert fen input to fenX
 	const fenx = convertFenToFenX(fenPosition);
 	const foundGames = [];
 	
 	// iterate PGN database
-	pgnList.forEach(pgn => {
-		// convert pgn to fenxList
-		const fenxList = convertPGNToFENxList(pgn);
+	games.forEach(game => {
+		// convert game to fenxList
+		let fenxList = [];
+
+		if (gameType === 'pgn') {
+			fenxList = convertPGNToFENxList(game);
+		} else if (gameType === 'string_moves') {
+			const listOfMoves = game.split(' ');
+			const fenList = convertMoveListToFENList(listOfMoves);
+			fenxList = convertFenListToFenxList(fenList);
+		}
 
 		// check if original fenx exists in fenxList
 		if (fenxList.includes(fenx)) {
 			console.log('>>>>>>>>>>> Tequila!!! ')
-			foundGames.push(pgn);
+			foundGames.push(game);
 		}
 	});	
 

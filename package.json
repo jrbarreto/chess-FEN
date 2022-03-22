@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "chess.js": "^0.12.1"
+  },
+  "devDependencies": {
+    "lichess-client": "^2.0.0"
   }
 }
