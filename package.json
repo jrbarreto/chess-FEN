@@ -16,6 +16,7 @@
     "url": "https://github.com/jrbarreto/chess-FEN/issues"
   },
   "homepage": "https://github.com/jrbarreto/chess-FEN#readme",
+  "types": "index.d.ts",
   "dependencies": {
     "chess.js": "^0.12.1"
   },
