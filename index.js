@@ -6,7 +6,7 @@ function deleteTags(pgn) {
 }
 
 function deleteSubVariations(pgn) {
-	var result = pgn;
+	let result = pgn;
 
 	while (result.includes('{') || result.includes('}')) {
 		const start = result.indexOf('{');

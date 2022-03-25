@@ -1,4 +1,21 @@
 {
+  "name": "fen-structures",
+  "description": "This is a powerful chess searcher based on pawn structures.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrbarreto/chess-FEN.git"
+  },
+  "author": "chessdb.app",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jrbarreto/chess-FEN/issues"
+  },
+  "homepage": "https://github.com/jrbarreto/chess-FEN#readme",
   "dependencies": {
     "chess.js": "^0.12.1"
   },
